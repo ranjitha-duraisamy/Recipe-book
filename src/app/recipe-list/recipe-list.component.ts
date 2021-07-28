@@ -8,12 +8,18 @@ import { Recipe } from './recipe.model';
 })
 export class RecipeListComponent implements OnInit {
   recipes: Recipe[] = [
+    new Recipe('Fry Chicken', 'Korean Fry chicken', 'https://www.kitchensanctuary.com/wp-content/uploads/2019/08/Korean-Fried-Chicken-foodporn-7373.jpg'),
     new Recipe('Fry Chicken', 'Korean Fry chicken', 'https://www.kitchensanctuary.com/wp-content/uploads/2019/08/Korean-Fried-Chicken-foodporn-7373.jpg')
   ];
+  selectedRecipe: Recipe;
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onRecipeSelected(recipe: Recipe): void {
+    this.selectedRecipe = recipe;
   }
 
 }
