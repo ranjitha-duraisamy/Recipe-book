@@ -1,3 +1,4 @@
+<div *ngIf="selectedRecipe; else selectRecipe">
 <div class="row">
     <div class="col-xs-12">
         <h2>{{ selectedRecipe?.name }}</h2>
@@ -10,7 +11,7 @@
 
             <ul class="dropdown-menu" area-labelledby="dropdownMenu">
                 <li>
-                    <a href="#" class="dropdown-item">To Shopping List</a>
+                    <a class="dropdown-item cursor-pointer" (click)="addIngredientsToShoppingList(selectedRecipe.ingredients)">To Shopping List</a>
                 </li>
                 <li>
                     <a href="#" class="dropdown-item">Edit Recipe</a>
@@ -24,6 +25,17 @@
                 <img class="img-fluid" [src]="selectedRecipe?.imagePath" alt="{{ selectedRecipe?.name }}">
             </div>
         </div>
+        <div class="mt-3 mb-3">
+            <ul class="list-group">
+                <li class="list-group-item" *ngFor="let ingredient of selectedRecipe.ingredients">
+                    {{ ingredient.name }} - {{ ingredient.amount }}
+                </li>
+            </ul>
+        </div>
     </div>
 </div>
+</div>
+<ng-template #selectRecipe>
+    <p>Please select Recipe to see details!!</p>
+</ng-template>
 
