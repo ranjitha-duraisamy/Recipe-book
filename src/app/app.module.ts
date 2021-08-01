@@ -12,6 +12,7 @@ import { HeaderComponent } from './header/header.component';
 import { DropdownDirective } from './dropdown.directive';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { RecipeStartComponent } from './recipe-list/recipe-start/recipe-start.component';
+import { RecipeEditComponent } from './recipe-list/recipe-edit/recipe-edit.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { RecipeStartComponent } from './recipe-list/recipe-start/recipe-start.co
     HeaderComponent,
     DropdownDirective,
     PageNotFoundComponent,
-    RecipeStartComponent
+    RecipeStartComponent,
+    RecipeEditComponent
   ],
   imports: [
     BrowserModule,

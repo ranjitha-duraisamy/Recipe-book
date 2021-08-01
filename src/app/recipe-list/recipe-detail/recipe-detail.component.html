@@ -7,14 +7,14 @@
 <div class="row">
     <div class="col-xs-12">
         <div class="dropdown">
-            <a appDropdown href="#" class="btn btn-primary dropdown-toggle" role="button" id="dropdownMenu"  aria-expanded="false">Manage</a>
+            <a appDropdown class="btn btn-primary dropdown-toggle" role="button" id="dropdownMenu"  aria-expanded="false">Manage</a>
 
             <ul class="dropdown-menu" area-labelledby="dropdownMenu">
                 <li>
                     <a class="dropdown-item cursor-pointer" (click)="addIngredientsToShoppingList(selectedRecipe.ingredients)">To Shopping List</a>
                 </li>
                 <li>
-                    <a href="#" class="dropdown-item">Edit Recipe</a>
+                    <a routerLink="edit" class="dropdown-item">Edit Recipe</a>
                 </li>
                 <li>
                     <a href="#" class="dropdown-item">Delete Recipe</a>
