@@ -1,7 +1,7 @@
 <div class="row mt-2">
     <div class="col-xs-12">
-        <a href="#" class="list-group-item list-group-item-action clearfix p-2" 
-        (click)="onRecipeSelect(recipe)">
+        <a class="list-group-item list-group-item-action clearfix p-2" 
+        [routerLink]="['/recipes', id, 'details']">
             <div class="float-start">
                 <div class="fw-bold">{{ recipe.name }}</div>
                 <small class="text-muted">{{ recipe.description }}</small>

@@ -1,4 +1,4 @@
-<div *ngIf="selectedRecipe; else selectRecipe">
+<div *ngIf="selectedRecipe">
 <div class="row">
     <div class="col-xs-12">
         <h2>{{ selectedRecipe?.name }}</h2>
@@ -35,7 +35,4 @@
     </div>
 </div>
 </div>
-<ng-template #selectRecipe>
-    <p>Please select Recipe to see details!!</p>
-</ng-template>
 
