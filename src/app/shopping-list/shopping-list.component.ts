@@ -24,4 +24,8 @@ export class ShoppingListComponent implements OnInit {
     this.ingredients.push(ingredient);
   }
 
+  onSelectIngredient(index: number): void {
+    this.shoppingService.editableIngredient(index);
+  }
+
 }
