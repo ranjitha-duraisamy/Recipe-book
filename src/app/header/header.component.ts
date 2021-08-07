@@ -1,3 +1,4 @@
+import { DataService } from './../shared/data.service';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
@@ -9,13 +10,21 @@ export class HeaderComponent implements OnInit {
 
   @Output() selectedOption = new EventEmitter<string>()
 
-  constructor() { }
+  constructor( private dataService: DataService ) { }
 
   ngOnInit(): void {
   }
 
   onSelect(selectedOption: string): void {
     this.selectedOption.emit(selectedOption);
+  }
+
+  onSaveData(): void {
+    this.dataService.saveData();
+  }
+
+  onFetchData(): void {
+    this.dataService.fetchData();
   }
 
 }
