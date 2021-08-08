@@ -24,7 +24,7 @@ export class HeaderComponent implements OnInit {
   }
 
   onFetchData(): void {
-    this.dataService.fetchData();
+    this.dataService.fetchData().subscribe();
   }
 
 }

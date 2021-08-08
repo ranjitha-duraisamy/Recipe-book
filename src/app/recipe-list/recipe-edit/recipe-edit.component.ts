@@ -15,6 +15,7 @@ export class RecipeEditComponent implements OnInit {
   editMode: boolean = false;
   recipe: Recipe;
   recipeForm: FormGroup;
+  selectedRecipeId: number;
 
   constructor(
     private route: ActivatedRoute,
@@ -26,6 +27,7 @@ export class RecipeEditComponent implements OnInit {
       this.editMode = !!params['id'];
       if(this.editMode) {
         this.recipe = this.recipeService.getRecipeById(+params['id']);
+        this.selectedRecipeId = +params['id'];
       }
       this.initForm();
     })
@@ -59,6 +61,16 @@ export class RecipeEditComponent implements OnInit {
       description: new FormControl(description, [ Validators.required ]),
       ingredients: new FormArray(recipeIngredients)
     })
+  }
+
+  onSave() {
+    const recipeFormVal = this.recipeForm.value;
+    const recipe = new Recipe(
+      recipeFormVal.name,
+      recipeFormVal.description,
+      recipeFormVal.image,
+      recipeFormVal.ingredients);
+    this.recipeService.updateRecipe(recipe, this.selectedRecipeId);
   }
 
 }

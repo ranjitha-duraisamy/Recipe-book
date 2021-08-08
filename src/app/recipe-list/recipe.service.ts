@@ -33,6 +33,12 @@ export class RecipeService {
     this.shoppingService.addIngredientList(ingredients);
   }
 
+  updateRecipe(recipe, id) {
+    this.recipes[id] = recipe;
+    console.log(this.recipes);
+    this.recipesChanged.next(this.recipes.slice());
+  }
+
   removeRecipe(id: number) {
     this.recipes.splice(id, 1);
     this.recipesChanged.next(this.recipes.slice());

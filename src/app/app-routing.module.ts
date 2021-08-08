@@ -1,3 +1,4 @@
+import { RecipesResover } from './recipe-list/recipes-resolve.service';
 import { RecipeEditComponent } from './recipe-list/recipe-edit/recipe-edit.component';
 import { RecipeStartComponent } from './recipe-list/recipe-start/recipe-start.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
@@ -13,8 +14,8 @@ const routes: Routes = [
   { path: 'recipes', component: RecipeListComponent, children: [
     { path: '', component: RecipeStartComponent },
     { path: 'new', component: RecipeEditComponent },
-    { path: ':id', component: RecipeDetailComponent },
-    { path: ':id/edit', component: RecipeEditComponent }
+    { path: ':id', component: RecipeDetailComponent, resolve: [RecipesResover] },
+    { path: ':id/edit', component: RecipeEditComponent, resolve: [RecipesResover] }
   ] },
   { path: 'shopping-list', component: ShoppingListComponent },
   // { path: 'not-found', component: PageNotFoundComponent },
